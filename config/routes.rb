@@ -15,6 +15,8 @@ Rails.application.routes.draw do
    end 
  end
 
+ 
+
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
   get 'contact' => 'static_pages#contact'
@@ -26,6 +28,16 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :posts,                only: [:create, :destroy]
   resources :relationships,        only: [:create, :destroy]
+  resources :diets, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
+
+
+  resources :recipes do
+    member do
+      post 'like'
+    end
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,47 @@
+
+ <div class ='row'>
+  <div class="col-md-8">
+    <% if logged_in? and (@recipe.user== current_user || current_user.admin?) %>
+      <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn btn-success pull-right" %>
+    <% end %> 
+    <% if logged_in? and current_user.admin? %>
+      <%= link_to "Delete Recipe", @recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <% end %>
+    <h3><%= @recipe.summary %></h3>
+    <div class="show_recipe">
+      <%= image_tag(@recipe.picture.url, class: "clearfix") if @recipe.picture? %>
+    </div>
+
+   <div class ="well">
+      <% if @recipe.diets.any? %>
+        <p>Diet: <%= render @recipe.diets %></p>
+      <% end %>
+      <% if @recipe.ingredients.any? %>
+        <p>Ingredients: <%= render @recipe.ingredients %></p>
+      <% end %>
+      <p>
+      <p>
+        <strong>Steps:</strong>
+      </p>
+      <%= simple_format(@recipe.description) %>
+       <div class="pull-right">
+        <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @recipe.thumbs_up_total %>
+        <% end %> &nbsp&nbsp&nbsp&nbsp
+        <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @recipe.thumbs_down_total %>
+        <% end %>
+      </div>
+  </div>
+
+      
+  </div>
+  </div>
+  
+      
+
+  
+      
+ 
+
+<h5><%= link_to "Return to Recipes Listing", recipes_path, class: "btn btn-warning btn-small" %></h5>

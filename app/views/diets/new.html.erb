@@ -1,0 +1,15 @@
+
+<%= render 'shared/page_title', title: "Create a new Diet" %>
+
+<%= render 'shared/errors_recipes', obj: @diet%>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @diet do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit 'Create Diet', class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
