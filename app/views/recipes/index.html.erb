@@ -14,13 +14,17 @@
   <% @recipes.each do|recipe| %>
   <div class= "container">
     <div class= "row">
-
+    
   	<div class="col-md-2">
+   
         <section class="chef_info center ">
           <span class="clearfix"><%= link_to gravatar_for(recipe.user, size: 100), user_path(recipe.user) %></span>
           <h5 class><%=recipe.user.name %></h5>
         </section>
+       
       </div>
+     
+
 
       <div class="col-lg-6 well">
         <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
