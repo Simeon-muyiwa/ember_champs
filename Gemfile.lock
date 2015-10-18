@@ -1,3 +1,27 @@
+GIT
+  remote: git://github.com/andreareginato/redis-throttle.git
+  revision: 98cf0bf5f2c3955408f2b5667c7b6ddcd459b6d4
+  specs:
+    redis-throttle (0.0.1)
+      activesupport
+      hiredis
+      rack
+      rack-throttle
+      redis
+      redis-namespace
+
+GIT
+  remote: git://github.com/kollegorna/active_hash_relation.git
+  revision: 84c37d6997890c5eaca6e5a441f20926e4f0c7e1
+  specs:
+    active_hash_relation (1.0.3)
+
+GIT
+  remote: git://github.com/kollegorna/rspec-api_helpers.git
+  revision: 4438227015cc1112bcc2bb37b2ca621dbfccc6a6
+  specs:
+    rspec-api_helpers (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,6 +44,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.9.2)
+      activemodel (>= 3.2)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -111,6 +137,7 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
+    hiredis (0.6.0)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -122,6 +149,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.0.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -161,9 +191,14 @@ GEM
       slop (~> 3.4)
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.4.0)
+      rack (>= 1.0.0)
     rails (4.2.3)
       actionmailer (= 4.2.3)
       actionpack (= 4.2.3)
@@ -199,6 +234,9 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     ruby-progressbar (1.7.5)
     sass (3.4.15)
     sass-rails (5.0.2)
@@ -241,6 +279,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash_relation!
+  active_model_serializers (= 0.9.2)
   bcrypt (~> 3.1.7)
   bootstrap-sass (= 3.2.0.0)
   bootstrap-will_paginate (= 0.0.10)
@@ -252,13 +292,18 @@ DEPENDENCIES
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
+  kaminari (~> 0.16.1)
   mini_backtrace (= 0.1.3)
   mini_magick (= 3.8.0)
   minitest-reporters (= 1.0.5)
   pg (= 0.17.1)
   puma (= 2.11.1)
+  pundit (~> 0.3.0)
+  rack-cors
   rails (= 4.2.3)
   rails_12factor (= 0.0.2)
+  redis-throttle!
+  rspec-api_helpers!
   sass-rails (= 5.0.2)
   sdoc (= 0.4.0)
   spring (= 1.1.3)

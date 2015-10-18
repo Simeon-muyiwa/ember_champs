@@ -21,6 +21,21 @@ gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'pg',             '0.17.1'
 
+gem 'rack-cors', :require => 'rack/cors'
+gem 'active_hash_relation', github: 'kollegorna/active_hash_relation'
+
+#api related
+gem 'pundit', '~> 0.3.0'
+#gem 'active_model_serializers',
+#  git: 'git@github.com:rails-api/active_model_serializers.git',
+#  branch: '0-9-stable'
+
+gem 'active_model_serializers', '0.9.2'
+gem 'kaminari', '~> 0.16.1'
+gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
+gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
+
+
 
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
