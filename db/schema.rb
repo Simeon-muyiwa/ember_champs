@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20151018082615) do
     t.string   "picture"
   end
 
-  add_index "recipes", ["user_id", "updated_at"], name: "index_recipes_on_user_id_and_updated_at", using: :btree
+  add_index "recipes", ["user_id", "created_at"], name: "index_recipes_on_user_id_and_created_at", using: :btree
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
