@@ -19,6 +19,7 @@ gem 'jquery-rails',            '4.0.3'
 gem 'turbolinks',              '2.3.0'
 gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
+gem 'arel',                    '~> 6.0.0'
 gem 'pg',             '0.17.1'
 
 gem 'rack-cors', :require => 'rack/cors'
@@ -34,6 +35,8 @@ gem 'active_model_serializers', '0.9.2'
 gem 'kaminari', '~> 0.16.1'
 gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
 gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
+
+
 
 
 
@@ -54,6 +57,6 @@ end
 group :production do
   
   gem 'rails_12factor', '0.0.2'
-  gem 'unicorn',        '4.8.3'
+  gem 'puma',           '2.11.1'
   gem 'newrelic_rpm'
 end
