@@ -1,4 +1,6 @@
-User.create!(name:  "Simeon Muyiwa",
+ 
+if Rails.env.development?
+ User.create!(name:  "Simeon Muyiwa",
              email: "muyiwa100@yahoo.com",
              password:              "busayo20",
              password_confirmation: "busayo20",
@@ -13,7 +15,7 @@ User.create!(name:  name,
              email: email,
              password:              password,
              password_confirmation: password,
-              activated: true,
+             activated: true,
              activated_at: Time.zone.now)
  end
 

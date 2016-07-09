@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   before_save  :downcase_email
   before_create :created_activation_digest
   before_create :generate_authentication_token
+  
 
   validates :name,  presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

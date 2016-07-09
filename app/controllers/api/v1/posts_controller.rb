@@ -6,8 +6,9 @@ class Api::V1::PostsController < Api::V1::BaseController
     # ember optimization
     # we could have another point for the feed but then we would have some posts
     # 2 times in browser's memory
-    if params[:feed]
+     if params[:feed]
       return api_error(status: 422) if params[:feed_user_id].blank?
+     
       return unauthorized! unless current_user.id == params[:feed_user_id].to_i
 
       posts = User.find_by(id: params[:feed_user_id]).feed
